@@ -76,6 +76,14 @@ public class WebPageObjects extends BasePO {
         return flag;
     }
 
+    public boolean verifyLandingPage() {
+        boolean flag = false;
+        if (driver.findElement(By.cssSelector("a[href*=Process]")).isDisplayed()) {
+            flag = true;
+        }
+        return flag;
+    }
+
     public void selectsProduct(String product) {
         driver.findElement(By.cssSelector("select[id$=ddlProduct]")).sendKeys(product);
     }
